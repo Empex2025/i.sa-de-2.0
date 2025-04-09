@@ -5,13 +5,16 @@ import SplashScreen from "../components/SplashScreen";
 import HelpScreen from "../components/HelpScreen";
 import OnboardingScreen from "./onboardingScreen"; // Your existing onboarding screen
 import WelcomeScreen from "../components/WelcomeScreen";
+import SignInOptionsScreen from "../components/SigninOptionsScreen";
+
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: false , animation: 'fade'}}>
+        
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} /> */}
         <Stack.Screen
@@ -34,6 +37,14 @@ const App = () => {
         },
         }} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="SigninOptionsScreen" component={SignInOptionsScreen} 
+        options={{
+          transitionSpec: {
+            open: { animation: 'timing', config: { duration: 2500 } },
+            close: { animation: 'timing', config: { duration: 2500 } },
+          }
+        }}
+        />
       </Stack.Navigator>
     
   );

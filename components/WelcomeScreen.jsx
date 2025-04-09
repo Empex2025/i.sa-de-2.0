@@ -12,6 +12,12 @@ import illustration from "./../assets/images/family with a disabled child-bro 1.
 import GradientButton from "./Buttons/GradientButton"
 
 const WelcomeScreen = ({ navigation }) => {
+
+  const redirectLogin = () => {
+
+    navigation.navigate("SigninOptionsScreen");
+  } 
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -26,7 +32,7 @@ const WelcomeScreen = ({ navigation }) => {
       {/* Buttons */}
       <View style={styles.buttonContainer}>
         {/* Primary Button with Gradient */}
-         <GradientButton title={'Quero criar uma nova conta'}></GradientButton>
+         <GradientButton title={'Quero criar uma nova conta'} onPress={redirectLogin}></GradientButton>
 
         {/* Secondary Button */}
         <TouchableOpacity 
