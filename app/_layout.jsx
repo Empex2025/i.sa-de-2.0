@@ -1,12 +1,14 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from "@react-navigation/stack";
-import SplashScreen from "../components/SplashScreen";
 import HelpScreen from "../components/HelpScreen";
 import OnboardingScreen from "./onboardingScreen"; // Your existing onboarding screen
-import WelcomeScreen from "../components/WelcomeScreen";
 import SignInOptionsScreen from "../components/SigninOptionsScreen";
-
+import SplashIntroScreen from "./splashIntroScreen";
+import MainSplashScreen from "../components/MainSplashScreen";
+import WelComeScreen2 from "../components/WelComeScreen2";
+import IntroPagination from "../components/Intro/IntroPagination";
+import IntroPagination01 from "../components/Intro/IntroPagination01";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +17,9 @@ const App = () => {
     
       <Stack.Navigator screenOptions={{ headerShown: false , animation: 'fade'}}>
         
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen name="SplashIntroScreen"  component={SplashIntroScreen}/>
+        <Stack.Screen name="MainSplashScreen"  component={MainSplashScreen}/>  
+        {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> */}
         {/* <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} /> */}
         <Stack.Screen
           name="OnboardingScreen"
@@ -36,7 +40,9 @@ const App = () => {
           }),
         },
         }} />
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="WelComeScreen2" component={WelComeScreen2} />
+        <Stack.Screen name="IntroPagination" component={IntroPagination} />
+        <Stack.Screen name="IntroPagination01" component={IntroPagination01} />
         <Stack.Screen name="SigninOptionsScreen" component={SignInOptionsScreen} 
         options={{
           transitionSpec: {
